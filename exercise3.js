@@ -9,10 +9,36 @@
 
 class Employee {
   // YOUR CODE HERE
+  #name;
+  #position;
+  constructor(name, position){
+    this.#name = name
+    this.#position = position
+  }
+
+  get name(){
+    return this.#name
+  }
+  get position(){
+    return this.#position
+  }
+  
+  introduce(){
+    return `Hi, I'm ${this.#name}, a ${this.#position}.`
+  }
 }
 
 class Manager extends Employee {
   // YOUR CODE HERE
+  #department;
+  constructor(name, position, department){
+    super(name, position)
+    this.#department = department 
+  }
+
+  introduce(){
+    return `Hi, I'm ${super.name}, a ${super.position} in the ${this.#department} department.`
+  }
 }
 
 
